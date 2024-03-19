@@ -1,32 +1,26 @@
 package org.example
 
 fun main() {
-    val listaDeNombres = listOf("Juan", "Enrique", "Camila")
-    println(listaDeNombres)
+    val numerosDeLoteria = listOf(11,22,43,56,78,66)
 
-    val listaVacia = mutableListOf<String>()
-    println(listaVacia)
-    listaVacia.add("Juan")
-    println(listaVacia)
+    val numerosSorted = numerosDeLoteria.sorted()
+    println(numerosSorted)
 
-    val valorUsandoGet = listaVacia.get(0)
-    println(valorUsandoGet)
+    val numerosDeLoteriaDescendientes = numerosDeLoteria.sortedDescending()
+    println(numerosDeLoteriaDescendientes)
 
-    val valorUsandoOperador = listaVacia[0]
-    println(valorUsandoOperador)
+    val ordenarPorMultiplos = numerosDeLoteria.sortedBy { numero -> numero < 50}
+    println(ordenarPorMultiplos)
 
-    val primerValor: String? = listaDeNombres.firstOrNull()
-    println(primerValor)
+    val numerosAleatorios = numerosDeLoteria.shuffled()
+    println(numerosAleatorios)
 
-    listaVacia.removeAt(0)
-    println(listaVacia)
+    val numerosEnReversa = numerosDeLoteria.reversed()
+    println(numerosEnReversa)
 
-    listaVacia.add("Enrique")
-    println(listaVacia)
-    listaVacia.removeIf{ caracteres -> caracteres.length > 3 }
-    println(listaVacia)
+    val mensajesDeNumeros = numerosDeLoteria.map { numero -> "Tu numero de loteria es $numero" }
+    println(mensajesDeNumeros)
 
-    val myArray = arrayOf(1, 2, 3, 4)
-    println(myArray)
-    println("Array como lista ${myArray.toList()}")
+    val numerosFiltrados = numerosDeLoteria.filter { numero -> numero > 50 }
+    println(numerosFiltrados)
 }
