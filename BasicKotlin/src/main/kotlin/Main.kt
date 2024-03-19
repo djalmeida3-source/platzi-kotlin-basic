@@ -1,16 +1,17 @@
 package org.example
 
-const val PI= 3.1416
 fun main() {
-    val listaDeFrutas: List<String> = listOf("Manzana","Pera","Frambuesa","Durazno")
-    for (fruta in listaDeFrutas) println("Hoy voy a comer una fruta llamada $fruta")
+    var nombre :String? = null
+    try {
+        throw NullPointerException("Referencia nula")
+    } catch (e:NullPointerException){
+        println("Ha ocurrido un error")
+    } finally {
+        println("Finalmente ha ocurrido un error... Cerrando aplicacion")
+    }
 
-    listaDeFrutas.forEach { fruta -> println("Hoy voy a comer una fruta nueva llamada $fruta") }
-
-    val caracteresDeFruta: List<Int> = listaDeFrutas.map { fruta -> fruta.length }
-    println(caracteresDeFruta)
-
-    val listaFiltrada = caracteresDeFruta.filter { caracteres -> caracteres > 5 }
-    println(listaFiltrada)
-
+    val primerValor = 10
+    val segundoValor = 0
+    val resultado : Int = try { primerValor / segundoValor } catch (e: Exception) { 0 }
+    println(resultado)
 }
