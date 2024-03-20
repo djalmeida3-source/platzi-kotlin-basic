@@ -1,32 +1,19 @@
 package org.example
 
 fun main() {
-    val edaDeSuperHeroes = mapOf(
-        "Ironman" to 35,
-        "Spiderman" to 23,
-        "Captain America" to 99
-    )
-    println(edaDeSuperHeroes)
+    val vocalesRepetidas = setOf("a", "e", "i", "o", "u", "a", "e", "i", "o", "u")
+    println(vocalesRepetidas)
 
-    val edadSuperHeroesMutable = mutableMapOf(
-        "Ironman" to 35,
-        "Spiderman" to 23,
-        "Captain America" to 99
-    )
-    println(edadSuperHeroesMutable)
+    val numerosFavoritos = mutableSetOf(1,2,3,4)
+    println(numerosFavoritos)
 
-    edadSuperHeroesMutable.put("Wolverine", 45)
-    println(edadSuperHeroesMutable)
+    numerosFavoritos.add(5)
+    numerosFavoritos.add(5)
+    println(numerosFavoritos)
 
-    edadSuperHeroesMutable["Storm"] = 30
-    println(edadSuperHeroesMutable)
+    numerosFavoritos.remove(5)
+    println(numerosFavoritos)
 
-    val edadIronman = edadSuperHeroesMutable["Ironman"]
-    println(edadIronman)
-
-    edadSuperHeroesMutable.remove("Wolverine")
-    println(edadSuperHeroesMutable)
-
-    println(edadSuperHeroesMutable.keys)
-    println(edadSuperHeroesMutable.values)
+    val valorDelSet = numerosFavoritos.firstOrNull { numero -> numero > 2 }
+    println(valorDelSet)
 }
