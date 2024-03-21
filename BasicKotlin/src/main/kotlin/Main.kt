@@ -1,19 +1,19 @@
 package org.example
 
 fun main() {
-    val vocalesRepetidas = setOf("a", "e", "i", "o", "u", "a", "e", "i", "o", "u")
-    println(vocalesRepetidas)
+    val fraseAleatoria = "En Platzi nunca paramos de aprender".randomCase()
+    imprimirFrase(fraseAleatoria)
+}
 
-    val numerosFavoritos = mutableSetOf(1,2,3,4)
-    println(numerosFavoritos)
+fun imprimirFrase(frase: String) : Unit {
+    println("Tu frase es: $frase")
+}
 
-    numerosFavoritos.add(5)
-    numerosFavoritos.add(5)
-    println(numerosFavoritos)
-
-    numerosFavoritos.remove(5)
-    println(numerosFavoritos)
-
-    val valorDelSet = numerosFavoritos.firstOrNull { numero -> numero > 2 }
-    println(valorDelSet)
+fun String.randomCase(): String {
+    val numeroAleatorio = (0..99).random()
+    if (numeroAleatorio.rem(2) == 0) {
+        return this.uppercase()
+    } else {
+        return this.lowercase()
+    }
 }
