@@ -1,9 +1,13 @@
 package org.example
 
 fun main() {
-    imprimirNombre(nombre = "David", apellido = "Almeida")
-}
+    val myLambda : (String) -> Int = {
+        valor -> valor.length
+    }
+    val lambdaEjecutada = myLambda("Hola Platzi")
+    println(lambdaEjecutada)
 
-fun imprimirNombre(nombre: String, segundoNombre: String = "", apellido: String) {
-    println("Mi nombre completo es: $nombre $segundoNombre $apellido")
+    val saludos = listOf("Hello", "Hola", "Ciao")
+    val longitudDeSaludos = saludos.map(myLambda)
+    println(longitudDeSaludos)
 }
