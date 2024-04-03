@@ -1,13 +1,22 @@
 package org.example
 
 fun main() {
-    val myLambda : (String) -> Int = {
-        valor -> valor.length
+    val largoDelValorInicial = superFuncion(valorInicial = "Hola!") { valor ->
+        valor.length
     }
-    val lambdaEjecutada = myLambda("Hola Platzi")
-    println(lambdaEjecutada)
+    println(largoDelValorInicial)
 
-    val saludos = listOf("Hello", "Hola", "Ciao")
-    val longitudDeSaludos = saludos.map(myLambda)
-    println(longitudDeSaludos)
+    val lambda = funcionInception("David")
+    val valorLambda: String = lambda()
+    println(valorLambda)
+}
+
+fun superFuncion(valorInicial: String, block : (String) -> Int): Int {
+    return block(valorInicial)
+}
+
+fun funcionInception(nombre : String) : () -> String {
+    return {
+        "Hola desde la lambda ${nombre}"
+    }
 }
