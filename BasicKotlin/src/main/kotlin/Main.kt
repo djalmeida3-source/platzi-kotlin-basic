@@ -1,9 +1,10 @@
 package org.example
 
 fun main() {
-    val colores = listOf("rojo", "azul", "verde")
-    with(colores) {
-        println("Nuestros colores son $this")
-        println("La longitud de la lista es $size")
-    }
+    val moviles = mutableListOf("Google Pixel 2XL", "Google Pixel 4a", "Huawei P30", "Xiaomi Mi 10")
+        .run {
+            removeIf { movil -> movil.contains("Google") }
+            this
+        }
+    println(moviles)
 }
