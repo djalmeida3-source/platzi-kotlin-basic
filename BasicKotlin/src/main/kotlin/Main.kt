@@ -1,12 +1,9 @@
 package org.example
 
 fun main() {
-    var nombre : String? = null
-    nombre?.let {
-        valor -> println("El nombre no es nulo, es ${valor}")
-    }
-    nombre = "David"
-    nombre?.let {
-        valor -> println("El nombre no es nulo, es ${valor}")
+    val colores = listOf("rojo", "azul", "verde")
+    with(colores) {
+        println("Nuestros colores son $this")
+        println("La longitud de la lista es $size")
     }
 }
